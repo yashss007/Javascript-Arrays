@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Yash-JS Array</title>
+		<style type="text/css">
+			button{
+				cursor: pointer;
+			}
+		</style>
+		<script type="text/javascript">
+			var img1;
+			var img2;
+			var img3;
+			var img4;
+			var img5;
+			var img6;
+			var img7;
+			var img8;
+			var img9;
+			var img10;
+			var imgObjects = [];
+			var imgFileNames = [''];
+
+			function start(){
+				var rollbtn = document.getElementById("rollButton");
+				img1 = document.getElementById("d1");
+				img2 = document.getElementById("d2");
+				img3 = document.getElementById("d3");
+				img4 = document.getElementById("d4");
+				img5 = document.getElementById("d5");
+				img6 = document.getElementById("d6");
+				img7 = document.getElementById("d7");
+				img8 = document.getElementById("d8");
+				img9 = document.getElementById("d9");
+				img10 = document.getElementById("d10");
+
+				imgObjects = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
+				imgFileNames = ['img1.png', 'img2.png', 'img3.png', 'img4.png', 'img5.png', 'img6.png'];
+
+				rollbtn.addEventListener("click", rollDice, false);
+			}
+			function rollDice(){
+				for(var i in imgObjects){
+					setImage(img1);
+					setImage(img2);
+					setImage(img3);
+					setImage(img4);
+					setImage(img5);
+					setImage(img6);
+					setImage(img7);
+					setImage(img8);
+					setImage(img9);
+					setImage(img10);
+				}
+			}
+			function setImage(dieImg){
+				var dieValue = Math.floor(Math.random()*6 + 1);
+				dieImg.setAttribute("src", "./Images/die"+dieValue+".png");
+			}
+			window.addEventListener("load", start, false);
+		</script>
+	</head>
+	<body>
+		<form action="#">
+			<p>
+				<img id="d1" src="./Images/blank.png" alt="die image 1">
+				<img id="d2" src="./Images/blank.png" alt="die image 2">
+				<img id="d3" src="./Images/blank.png" alt="die image 3">
+				<img id="d4" src="./Images/blank.png" alt="die image 4">
+				<img id="d5" src="./Images/blank.png" alt="die image 5">
+				<img id="d6" src="./Images/blank.png" alt="die image 6">
+				<img id="d7" src="./Images/blank.png" alt="die image 7">
+				<img id="d8" src="./Images/blank.png" alt="die image 8">
+				<img id="d9" src="./Images/blank.png" alt="die image 9">
+				<img id="d10" src="./Images/blank.png" alt="die image 10">
+			</p>
+			<button type="button" id="rollButton">roll dice</button>
+		</form>	
+	</body>
+</html>
